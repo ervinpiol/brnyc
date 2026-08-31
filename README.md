@@ -61,16 +61,15 @@ Served **locally** on this placeholder (not redirected to billionairesrownyc.com
 | `/terms` | `content/terms-and-conditions.json` |
 | `/standard-operating-procedures` | `content/standard-operating-procedures.json` |
 | `/accessibility` | `content/accessibility.json` |
-| `/fair-housing` | bespoke page → links the NYS DOS official notice PDF |
+| `/fair-housing` | `content/fair-housing-notice.json` (NYS Housing & Anti-Discrimination Notice, Rev. 02/25) |
 
-- The four `content/*.json` files are copied **verbatim** from the
+- The five `content/*.json` files are copied **verbatim** from the
   billionairesrownyc platform repo (`content/`), rendered by
   [`components/DisclosureDocument.tsx`](components/DisclosureDocument.tsx). To
   update a policy, replace the JSON file (re-copy from the platform repo) — do
   not hand-edit legal copy.
-- `/fair-housing` shows the broker's fair-housing commitment (verbatim from the
-  platform's `lib/compliance.ts`) and links the **NY Dept of State** prescribed
-  Fair Housing Notice from the State's own copy, matching the platform.
+- `/fair-housing` renders the full **NYS Housing and Anti-Discrimination Notice**
+  (the State's standardized form, Rev. 02/25), same content the platform serves.
 - All legal pages inherit the site-wide **no-index** (they are interim copies on
   the no-index vault domain; the canonical indexed copies live on
   billionairesrownyc.com).
@@ -85,8 +84,8 @@ Served **locally** on this placeholder (not redirected to billionairesrownyc.com
   `.failure` styling, retargeted to home + request-access (no listings/map here).
 - **Favicon** — the platform monogram (`public/images/monogram.svg`), set via
   `metadata.icons` in [`app/layout.tsx`](app/layout.tsx), matching
-  billionairesrownyc.com. (The top-left logo on inner pages is a plain white
-  wordmark — no monogram box.)
+  billionairesrownyc.com. The inner-page top-left logo is the same monogram +
+  wordmark lockup, in white (brass on hover).
 
 ## Wire the lead form (GHL)
 

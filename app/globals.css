@@ -89,6 +89,12 @@ a:focus-visible,
   text-transform: uppercase;
 }
 
+.brand-link img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
 .brand-link span {
   color: inherit;
   font: inherit;
@@ -162,7 +168,8 @@ a:focus-visible,
   color: var(--obs-brass);
 }
 
-.disclosure a {
+/* Content links only — NOT the brand-link in the topline (which is white). */
+.disclosure__paragraph a {
   color: var(--obs-brass);
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -171,6 +178,11 @@ a:focus-visible,
 @media (max-width: 620px) {
   .brand-link {
     font-size: 0.46rem;
+  }
+
+  .brand-link img {
+    width: 1.6rem;
+    height: 1.6rem;
   }
 }
 

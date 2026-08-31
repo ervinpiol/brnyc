@@ -33,6 +33,7 @@ export default function DisclosureDocument({
     <main className="disclosure" aria-labelledby="disclosure-title">
       <div className="disclosure__topline">
         <Link className="brand-link" href="/" aria-label="Billionaires Row NYC — home">
+          <img src="/images/monogram.svg" alt="" aria-hidden="true" />
           <span>BILLIONAIRES ROW NYC</span>
         </Link>
       </div>
