@@ -27,8 +27,12 @@ platform is built.
 
 - **Next.js 16** (App Router) · **React 19** · **TypeScript** · **Tailwind CSS v4**
   (`@tailwindcss/postcss`) · **pnpm 10**
-- Fonts via `next/font/google`: Instrument Serif (headline), Manrope (body),
-  DM Mono (labels).
+- **Theme:** the Billionaires Row NYC platform design system — Deep Slate
+  `#0e172a` ground, Muted Gold `#c5a059` accent, Soft White `#f8fafc` ink
+  (tokens in [`app/globals.css`](app/globals.css)). Fonts via
+  `next/font/google`: Playfair Display (headline), Inter (body), JetBrains Mono
+  (labels). The teaser adopts the platform's palette/type/accent only, not its
+  full component set.
 - Deploy target: **Vercel** (the page prerenders as static).
 - No Radix / tRPC / Drizzle / DB — a teaser needs none of it.
 

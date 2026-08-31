@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope, DM_Mono } from "next/font/google";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+// Billionaires Row NYC platform fonts: Playfair Display (serif headline),
+// Inter (body), JetBrains Mono (labels).
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const manrope = Manrope({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const dmMono = DM_Mono({
-  weight: ["400", "500"],
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-dm-mono",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${manrope.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrains.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

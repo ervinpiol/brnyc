@@ -29,7 +29,7 @@ export default function Home() {
 
           <div className="mx-auto my-6 h-px w-14 bg-copper/70" aria-hidden="true" />
 
-          <h1 className="font-serif text-[clamp(2.25rem,6vw,3.75rem)] font-normal leading-[1.05] text-ivory-bright">
+          <h1 className="font-serif text-[clamp(2.5rem,6.5vw,4.25rem)] font-medium leading-[1.02] tracking-[-0.02em] text-ivory-bright">
             The Row, behind closed doors.
           </h1>
 
@@ -52,7 +52,7 @@ export default function Home() {
             ) : (
               <a
                 href={REQUEST_MAILTO}
-                className="inline-block rounded-sm bg-copper px-7 py-3.5 font-mono text-sm uppercase tracking-[0.08em] text-graphite transition hover:brightness-110"
+                className="inline-block rounded-md bg-copper px-7 py-3.5 font-mono text-xs uppercase tracking-[0.16em] text-graphite transition-colors hover:bg-ivory-bright"
               >
                 Request Access
               </a>
@@ -71,7 +71,7 @@ export default function Home() {
         <div>106 Pinehurst Avenue, Suite A66, New York, NY 10033</div>
         <div>
           (833) 749-1480 &nbsp;|&nbsp;{" "}
-          <a href={`mailto:${INQUIRY_EMAIL}`} className="text-muted hover:text-ivory">
+          <a href={`mailto:${INQUIRY_EMAIL}`} className="text-copper hover:underline underline-offset-4">
             {INQUIRY_EMAIL}
           </a>
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
           {LEGAL_LINKS.map((link, i) => (
             <span key={link.href}>
               {i > 0 && <span aria-hidden="true" className="text-line"> | </span>}
-              <a href={link.href} className="whitespace-nowrap text-muted hover:text-ivory">
+              <a href={link.href} className="whitespace-nowrap text-copper hover:underline underline-offset-4">
                 {link.label}
               </a>
             </span>
