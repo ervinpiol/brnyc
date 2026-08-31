@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Dark-luxury design language (per brief):
+   graphite bg, ivory ink, copper accent. Fonts wired in app/layout.tsx. */
+@theme inline {
+  --color-graphite: #141516;
+  --color-graphite-raised: #1c1d1f;
+  --color-ivory: #e9e5dd;
+  --color-ivory-bright: #f0ede6;
+  --color-copper: #c87045;
+  --color-muted: #9a978f;
+  --color-line: #26262b;
+
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-graphite);
+  color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus (a11y basics). */
+a:focus-visible,
+:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

@@ -1,67 +1,86 @@
 # brnyc.com — placeholder
 
-Pre-launch teaser + lead-capture holding page for **brnyc.com**. Separate site
-from the `billionairesrownyc.com` public IDX site and from `internal-Trestle-UI`
-(the internal CMA tool). Own repo, own deploy.
+Pre-launch teaser + lead-capture holding page for **brnyc.com**. Its own repo,
+own deploy — separate from `billionairesrownyc.com` (the public IDX site) and
+from `internal-Trestle-UI` (the internal CMA tool).
 
 ## Domain architecture (per Charles's BRNYC-Domain-Architecture-Map, 6 Aug 2026)
 
 - **billionairesrownyc.com** — THE FRONT DOOR, public / **indexed**: IDX listings,
-  Editorial & SEO, Lead capture. Where organic / PR / referral traffic lands.
+  Editorial & SEO, lead capture. Where organic / PR / referral traffic lands.
 - **THE GATE** — request access → qualify → invite.
 - **brnyc.com** — THE VAULT, gated / **no-index**: the premium platform (The Row
-  Report, Tower dossiers, Owner intel). Monetized via brokerage commissions
-  ($20M+ transactions) + subscription (The Row Report).
-- **billionairesrow.nyc** — 301 redirect → billionairesrownyc.com (supporting asset).
-- **you@brnyc.com** — email domain.
+  Report, Tower dossiers, Owner intel). Monetized via brokerage commissions +
+  subscription (The Row Report).
+- **billionairesrow.nyc** — 301 redirect → billionairesrownyc.com.
 
 This repo is the **interim placeholder** on brnyc.com: a teaser that holds the
 vault domain (no-index, by design) and captures interest until the gated
 platform is built.
 
-## What it is (per Charles, "websites" email, 6 Aug 2026)
-
-- **Teaser** to make people curious — no live statistics (accurate stats only
-  appear on the real platform once live; the placeholder must not show
-  inaccurate numbers).
-- **Lead capture** → contact info into **GHL** (ideal, for auto-followup
-  workflows) or a Google Sheet (minimum).
-- brnyc.com currently forwards to billionairesrownyc.com; Charles asked to
-  **remove that forwarding** and serve this placeholder instead (30 Aug 2026).
+- **Teaser** to make people curious — **no live statistics** (accurate stats only
+  appear on the real platform once live; the placeholder must not show inaccurate
+  numbers).
+- **Lead capture** → contact info into **GHL** (for auto-followup workflows).
 
 ## Stack
 
-Single static `index.html`, inline CSS, no build, no backend, no secrets.
-Deploy as static on Vercel / Cloudflare Pages / Netlify. `noindex` + `robots.txt`
-keep it out of search until launch.
+- **Next.js 16** (App Router) · **React 19** · **TypeScript** · **Tailwind CSS v4**
+  (`@tailwindcss/postcss`) · **pnpm 10**
+- Fonts via `next/font/google`: Instrument Serif (headline), Manrope (body),
+  DM Mono (labels).
+- Deploy target: **Vercel** (the page prerenders as static).
+- No Radix / tRPC / Drizzle / DB — a teaser needs none of it.
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000  (this repo's launch config uses 3100)
+pnpm build      # production build
+pnpm start      # serve the production build
+```
+
+## No-index (brnyc.com is no-index by design)
+
+Enforced in three places — keep all three:
+
+1. `robots: { index: false, follow: false }` metadata in [`app/layout.tsx`](app/layout.tsx).
+2. `X-Robots-Tag: noindex, nofollow` response header in [`next.config.ts`](next.config.ts).
+3. [`public/robots.txt`](public/robots.txt) — `Disallow: /`.
 
 ## Wire the lead form (GHL)
 
-`index.html` ships with a `mailto:` fallback so the page is never dead. To
-capture into GHL:
+The page ships with a `mailto:` fallback so it is never dead. To embed the GHL
+hosted form instead, set one env var — no code change:
 
 1. Build a hosted form in GHL, copy its **share URL**.
-2. In `index.html`, uncomment the `<iframe>` slot, paste the URL, delete the
-   `mailto` CTA.
-3. Configure the marketing-consent checkbox **in GHL** as separate / optional /
-   **unchecked** (required — Charles's compliance instructions, 24 Aug 2026,
-   §5). Record consent + timestamp + originating form.
+2. Set `NEXT_PUBLIC_GHL_FORM_URL` (see [`.env.example`](.env.example)) — locally
+   in `.env.local`, on Vercel in Project → Settings → Environment Variables.
+3. Redeploy. When the var is set, [`app/page.tsx`](app/page.tsx) renders the form
+   in an `<iframe>` in place of the mailto CTA.
+4. **Configure the marketing-consent checkbox IN GHL: separate, optional,
+   UNCHECKED.** Inquiry must be possible WITHOUT consenting to marketing (Charles's
+   compliance instructions, 24 Aug 2026). Record consent + timestamp + originating
+   form on the GHL side.
 
-## Before go-live — confirm with Charles
+## Open items — confirm with Charles before go-live
 
-- **Phone** — using `(833) 749-1480` (his 30 Aug update; "now answered by
-  Executive Losers"). The 24 Aug footer said `(855) 480-1115`. Confirm which is
-  public.
-- **License number** — omitted here on purpose. `10351214445` is 11 digits (NY =
-  10) and is unconfirmed; no listings are shown so no license display is required
-  on a stub. Add once confirmed.
+- **Phone** — using `(833) 749-1480` (his 30 Aug 2026 update; "now answered by
+  Executive Losers"). The 24 Aug footer said `(855) 480-1115`. **Confirm which is
+  public.**
+- **License number** — **omitted on purpose.** `10351214445` is 11 digits (NY = 10)
+  and unconfirmed; no listings are shown, so no license display is required on a
+  stub. Add once confirmed.
+- **Trade name** — the licensed entity is **FRITSCHLER, CHARLES**. Do **not**
+  describe "Billionaires Row NYC" as the licensed brokerage (trade name not yet
+  NYS-approved).
 - **Legal links** point at `billionairesrownyc.com/*` — correct per the
   architecture (legal pages live on the public front door).
-- **Forwarding** — brnyc.com currently 301s to billionairesrownyc.com. Remove
-  that and serve this placeholder (Charles, 30 Aug 2026).
+- **Forwarding** — brnyc.com currently 301s to billionairesrownyc.com. That
+  forwarding must be removed so this placeholder serves (Charles, 30 Aug 2026).
+  DNS is Charles's action.
 
-## Footer source
+## Copy / footer source
 
-Broker identity/footer copy is from Charles's approved "IDX website compliance"
-email (24 Aug 2026). Brand spelling standardized to "Billionaires Row NYC" (no
-apostrophe) per his 30 Aug ruling.
+Broker identity + footer copy is from Charles's approved "IDX website compliance"
+email (24 Aug 2026). Brand spelling standardized to **"Billionaires Row NYC"**
+(no apostrophe) per his 30 Aug 2026 ruling.
