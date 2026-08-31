@@ -71,6 +71,33 @@ a:focus-visible,
 }
 
 /* ---------------------------------------------------------------------------
+   Home hero skyline background (57th Street / Night). Same asset the platform
+   hero uses; dimmed and washed so the centred teaser stays legible.
+   --------------------------------------------------------------------------- */
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.home-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: saturate(0.82) brightness(0.5) contrast(1.06);
+}
+
+.home-hero__wash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 92% at 50% 44%, rgba(14, 23, 42, 0.82) 0%, rgba(14, 23, 42, 0.58) 44%, rgba(14, 23, 42, 0.4) 100%),
+    linear-gradient(180deg, rgba(14, 23, 42, 0.72) 0%, rgba(14, 23, 42, 0.18) 34%, rgba(14, 23, 42, 0.88) 100%);
+}
+
+/* ---------------------------------------------------------------------------
    Legal disclosure pages (privacy, terms, SOP, accessibility, fair housing).
    Ported from the platform: long-form reading, one measure, brass headings.
    --------------------------------------------------------------------------- */

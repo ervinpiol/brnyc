@@ -11,8 +11,15 @@ export default function Home() {
   const ghlFormUrl = process.env.NEXT_PUBLIC_GHL_FORM_URL;
 
   return (
-    <main className="flex flex-1 items-center justify-center px-6 py-[12vh]">
-      <div className="w-full max-w-xl text-center">
+    <main className="relative isolate flex flex-1 items-center justify-center overflow-hidden px-6 py-[12vh]">
+      {/* 57th Street skyline behind the teaser — same asset the platform hero uses. */}
+      <picture className="home-hero__bg" aria-hidden="true">
+        <source media="(max-width: 720px)" srcSet="/images/hero-mobile.svg" />
+        <img src="/images/hero-desktop.svg" alt="" />
+      </picture>
+      <div className="home-hero__wash" aria-hidden="true" />
+
+      <div className="relative z-10 w-full max-w-xl text-center">
         <p className="font-mono text-[0.7rem] uppercase tracking-[0.35em] text-copper">
           By Invitation · Manhattan
         </p>

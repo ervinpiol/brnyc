@@ -33,6 +33,9 @@ platform is built.
   `next/font/google`: Playfair Display (headline), Inter (body), JetBrains Mono
   (labels). The teaser adopts the platform's palette/type/accent only, not its
   full component set.
+- **Home background:** the platform's 57th-Street skyline (`hero-desktop.svg` /
+  `hero-mobile.svg`), dimmed under a wash so the centred teaser stays legible
+  ([`app/globals.css`](app/globals.css) `.home-hero__*`).
 - Deploy target: **Vercel** (the page prerenders as static).
 - No Radix / tRPC / Drizzle / DB — a teaser needs none of it.
 
