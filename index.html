@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Placeholder / pre-launch: do NOT let search engines index a teaser page. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Billionaires Row NYC</title>
+  <style>
+    :root{
+      --bg:#0b0b0d; --ink:#f5f3ee; --muted:#9a978f; --line:#26262b; --gold:#c9a24a;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      background:var(--bg); color:var(--ink);
+      font-family:Georgia,"Times New Roman",serif;
+      display:flex; flex-direction:column; min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+    }
+    main{flex:1 0 auto; display:flex; align-items:center; justify-content:center; padding:8vh 24px}
+    .card{max-width:640px; text-align:center}
+    .eyebrow{letter-spacing:.35em; text-transform:uppercase; font-family:Arial,Helvetica,sans-serif;
+      font-size:12px; color:var(--gold); margin:0 0 22px}
+    h1{font-size:clamp(34px,6vw,60px); line-height:1.05; margin:0 0 20px; font-weight:400}
+    .tease{font-size:clamp(16px,2.4vw,20px); color:var(--muted); line-height:1.6; margin:0 auto 36px; max-width:34em}
+    .cta{display:inline-block; font-family:Arial,Helvetica,sans-serif; font-size:14px; letter-spacing:.08em;
+      text-transform:uppercase; color:var(--bg); background:var(--gold); text-decoration:none;
+      padding:14px 28px; border-radius:2px}
+    .cta:hover{filter:brightness(1.08)}
+    .rule{width:56px; height:1px; background:var(--gold); margin:0 auto 28px; opacity:.7}
+    .form-slot{width:100%; max-width:480px; height:520px; border:0; margin:8px auto 0; display:block}
+
+    footer{flex-shrink:0; border-top:1px solid var(--line); padding:28px 24px 34px; text-align:center;
+      font-family:Arial,Helvetica,sans-serif; color:var(--muted); font-size:12.5px; line-height:1.7}
+    footer .brand{color:var(--ink); letter-spacing:.18em; text-transform:uppercase; font-size:12px; margin-bottom:10px}
+    footer .broker{color:var(--ink)}
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--ink)}
+    footer .links{margin:12px 0}
+    footer .links a{margin:0 8px; white-space:nowrap}
+    .eho{margin-top:12px}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <p class="eyebrow">Manhattan · Luxury Residences</p>
+      <div class="rule"></div>
+      <h1>Something rare is coming to Billionaires Row.</h1>
+      <p class="tease">
+        A private lens on Manhattan's most coveted addresses. Be among the first to see it.
+      </p>
+      <!-- Fallback CTA — active until the GHL form is wired in. -->
+      <a class="cta" href="mailto:inquiries@billionairesrownyc.com?subject=Billionaires%20Row%20NYC%20—%20Early%20Access">Request Early Access</a>
+
+      <!-- GHL lead-capture slot. When the GHL hosted form's share URL is ready:
+           1) uncomment the iframe below, 2) paste the URL, 3) delete the mailto CTA above.
+           Configure the marketing-consent checkbox in GHL: separate, optional, UNCHECKED. -->
+      <!--
+      <iframe class="form-slot" src="PASTE_GHL_FORM_SHARE_URL_HERE" title="Request Early Access"></iframe>
+      -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="brand">Billionaires Row NYC</div>
+    <div class="broker">FRITSCHLER, CHARLES</div>
+    <div>Licensed New York Real Estate Broker</div>
+    <div>106 Pinehurst Avenue, Suite A66, New York, NY 10033</div>
+    <div>(833) 749-1480 &nbsp;|&nbsp; <a href="mailto:inquiries@billionairesrownyc.com">inquiries@billionairesrownyc.com</a></div>
+    <div class="links">
+      <!-- Legal pages live on the IDX site; link out until BRNYC has its own. -->
+      <a href="https://billionairesrownyc.com/fair-housing">NYS Fair Housing Notice</a> |
+      <a href="https://billionairesrownyc.com/standard-operating-procedures">NY Standard Operating Procedures</a> |
+      <a href="https://billionairesrownyc.com/privacy-policy">Privacy Policy</a> |
+      <a href="https://billionairesrownyc.com/terms-and-conditions">Terms &amp; Conditions</a> |
+      <a href="https://billionairesrownyc.com/accessibility">Accessibility</a>
+    </div>
+    <div class="eho">Equal Housing Opportunity</div>
+    <div>© 2026 Charles Fritschler. All rights reserved.</div>
+  </footer>
+</body>
+</html>
