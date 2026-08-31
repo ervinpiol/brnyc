@@ -46,6 +46,19 @@ pnpm build      # production build
 pnpm start      # serve the production build
 ```
 
+## Deployment
+
+- **Host:** Vercel, project **`brnyc`** (team `executivesrealsolutionsph-7204`),
+  connected to GitHub **`ervinpiol/brnyc`**. **Push to `main` → auto-deploys to
+  production.** Manual deploy: `vercel --prod` from the repo.
+- **Domains:** `brnyc.com` (primary) + `www.brnyc.com` (308 → `brnyc.com`).
+- **DNS:** managed at **Cloudflare**, A record → Vercel (`76.76.21.21`). Changing
+  what brnyc.com *serves* needs **no DNS change** — it's just which Vercel project
+  holds the domain. (The old 301 forward to billionairesrownyc.com is gone.)
+- **To change brnyc.com:** push to `main` (auto-deploy), or redeploy the `brnyc`
+  project. The domain was moved off the earlier `brnyc-placeholder` project (now
+  idle/domainless) on go-live.
+
 ## No-index (brnyc.com is no-index by design)
 
 Enforced in three places — keep all three:
