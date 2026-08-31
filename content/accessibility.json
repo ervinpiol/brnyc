@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "paragraph",
+    "text": "Billionaires Row NYC is committed to making this website accessible to the widest possible audience, including people with disabilities. We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA and to keep the site usable with assistive technologies such as screen readers and keyboard navigation."
+  },
+  {
+    "kind": "paragraph",
+    "text": "Accessibility is an ongoing effort, and some content may not yet fully meet these standards. If you encounter any difficulty accessing information or completing an action on this site, please tell us so we can help and correct the problem."
+  },
+  {
+    "kind": "heading",
+    "text": "Reporting an accessibility problem"
+  },
+  {
+    "kind": "paragraph",
+    "text": "Email legal@billionairesrownyc.com with a description of the problem, the page or feature involved, and the assistive technology or browser you were using. We will respond and work to provide the information or service through an accessible means."
+  }
+]

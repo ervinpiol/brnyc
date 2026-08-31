@@ -21,6 +21,7 @@
   --obs-muted: rgba(248, 250, 252, 0.6);
   --obs-line: rgba(51, 65, 85, 0.25);
   --obs-line-brass: rgba(197, 160, 89, 0.56);
+  --obs-gutter: clamp(1.25rem, 5.5vw, 8rem);
   --obs-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -67,4 +68,118 @@ a:focus-visible,
   outline: 2px solid var(--obs-brass);
   outline-offset: 3px;
   border-radius: var(--radius);
+}
+
+/* ---------------------------------------------------------------------------
+   Legal disclosure pages (privacy, terms, SOP, accessibility, fair housing).
+   Ported from the platform: long-form reading, one measure, brass headings.
+   --------------------------------------------------------------------------- */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(248, 250, 252, 0.72);
+  font-family: var(--font-sans);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand-link img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.brand-link span {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.brand-link:hover {
+  color: var(--obs-ivory);
+}
+
+.disclosure {
+  padding: clamp(3rem, 8vw, 6rem) var(--obs-gutter) clamp(3rem, 6vw, 5rem);
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+/* The topline spans the page; the document keeps its reading measure, centred.
+   A rem measure rather than ch: ch resolves against each element's own font
+   size, so the display-size title would take a measure half again as wide as
+   the body it heads. 45rem is ~78 characters of body copy, held for every block. */
+.disclosure > :not(.disclosure__topline) {
+  max-width: 45rem;
+  margin-inline: auto;
+}
+
+.disclosure__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: clamp(2.4rem, 6vw, 4rem);
+}
+
+.disclosure__title {
+  margin: 0 0 2.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--obs-ivory);
+}
+
+.disclosure__heading {
+  margin: 2.6rem 0 0.9rem;
+  color: var(--obs-brass);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.disclosure__paragraph {
+  margin: 0 0 1.1rem;
+}
+
+.disclosure__list {
+  margin: 0 0 1.3rem;
+  padding-left: 1.15rem;
+}
+
+.disclosure__list li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.35rem;
+}
+
+.disclosure__list li::marker {
+  color: var(--obs-brass);
+}
+
+.disclosure a {
+  color: var(--obs-brass);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 620px) {
+  .brand-link {
+    font-size: 0.46rem;
+  }
+
+  .brand-link img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }

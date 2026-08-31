@@ -3,13 +3,14 @@ const REQUEST_MAILTO = `mailto:${INQUIRY_EMAIL}?subject=${encodeURIComponent(
   "Billionaires Row NYC — Request Access",
 )}`;
 
-// Legal pages live on the public front door (billionairesrownyc.com) for now.
+// Legal pages served locally on this placeholder (copy from the billionairesrownyc
+// platform content/). Fair Housing links the State's own prescribed notice.
 const LEGAL_LINKS = [
-  { label: "NYS Fair Housing Notice", href: "https://billionairesrownyc.com/fair-housing" },
-  { label: "NY Standard Operating Procedures", href: "https://billionairesrownyc.com/standard-operating-procedures" },
-  { label: "Privacy Policy", href: "https://billionairesrownyc.com/privacy-policy" },
-  { label: "Terms & Conditions", href: "https://billionairesrownyc.com/terms-and-conditions" },
-  { label: "Accessibility", href: "https://billionairesrownyc.com/accessibility" },
+  { label: "NYS Fair Housing Notice", href: "/fair-housing" },
+  { label: "NY Standard Operating Procedures", href: "/standard-operating-procedures" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Accessibility", href: "/accessibility" },
 ];
 
 export default function Home() {

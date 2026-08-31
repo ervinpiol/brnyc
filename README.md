@@ -51,6 +51,30 @@ Enforced in three places — keep all three:
 2. `X-Robots-Tag: noindex, nofollow` response header in [`next.config.ts`](next.config.ts).
 3. [`public/robots.txt`](public/robots.txt) — `Disallow: /`.
 
+## Legal pages
+
+Served **locally** on this placeholder (not redirected to billionairesrownyc.com):
+
+| Route | Source |
+| --- | --- |
+| `/privacy` | `content/privacy-policy.json` |
+| `/terms` | `content/terms-and-conditions.json` |
+| `/standard-operating-procedures` | `content/standard-operating-procedures.json` |
+| `/accessibility` | `content/accessibility.json` |
+| `/fair-housing` | bespoke page → links the NYS DOS official notice PDF |
+
+- The four `content/*.json` files are copied **verbatim** from the
+  billionairesrownyc platform repo (`content/`), rendered by
+  [`components/DisclosureDocument.tsx`](components/DisclosureDocument.tsx). To
+  update a policy, replace the JSON file (re-copy from the platform repo) — do
+  not hand-edit legal copy.
+- `/fair-housing` shows the broker's fair-housing commitment (verbatim from the
+  platform's `lib/compliance.ts`) and links the **NY Dept of State** prescribed
+  Fair Housing Notice from the State's own copy, matching the platform.
+- All legal pages inherit the site-wide **no-index** (they are interim copies on
+  the no-index vault domain; the canonical indexed copies live on
+  billionairesrownyc.com).
+
 ## Wire the lead form (GHL)
 
 The page ships with a `mailto:` fallback so it is never dead. To embed the GHL
@@ -69,16 +93,19 @@ hosted form instead, set one env var — no code change:
 ## Open items — confirm with Charles before go-live
 
 - **Phone** — using `(833) 749-1480` (his 30 Aug 2026 update; "now answered by
-  Executive Losers"). The 24 Aug footer said `(855) 480-1115`. **Confirm which is
-  public.**
+  Executive Losers"). The 24 Aug footer said `(855) 480-1115`, and the platform's
+  `lib/compliance.ts` still shows `(855) 480-1115`. **Confirm which is public** and
+  align both sites.
 - **License number** — **omitted on purpose.** `10351214445` is 11 digits (NY = 10)
   and unconfirmed; no listings are shown, so no license display is required on a
   stub. Add once confirmed.
 - **Trade name** — the licensed entity is **FRITSCHLER, CHARLES**. Do **not**
   describe "Billionaires Row NYC" as the licensed brokerage (trade name not yet
   NYS-approved).
-- **Legal links** point at `billionairesrownyc.com/*` — correct per the
-  architecture (legal pages live on the public front door).
+- **Legal pages** are now served locally (see **Legal pages** above), copied
+  from the platform `content/`. Keep them in sync when the platform's disclosures
+  change. When brnyc.com becomes the gated vault, decide whether these stay here
+  or link to the canonical copies on billionairesrownyc.com.
 - **Forwarding** — brnyc.com currently 301s to billionairesrownyc.com. That
   forwarding must be removed so this placeholder serves (Charles, 30 Aug 2026).
   DNS is Charles's action.
