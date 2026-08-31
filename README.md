@@ -1,8 +1,23 @@
 # brnyc.com — placeholder
 
 Pre-launch teaser + lead-capture holding page for **brnyc.com**. Separate site
-from the `billionairesrownyc.com` IDX platform and from `internal-Trestle-UI`
+from the `billionairesrownyc.com` public IDX site and from `internal-Trestle-UI`
 (the internal CMA tool). Own repo, own deploy.
+
+## Domain architecture (per Charles's BRNYC-Domain-Architecture-Map, 6 Aug 2026)
+
+- **billionairesrownyc.com** — THE FRONT DOOR, public / **indexed**: IDX listings,
+  Editorial & SEO, Lead capture. Where organic / PR / referral traffic lands.
+- **THE GATE** — request access → qualify → invite.
+- **brnyc.com** — THE VAULT, gated / **no-index**: the premium platform (The Row
+  Report, Tower dossiers, Owner intel). Monetized via brokerage commissions
+  ($20M+ transactions) + subscription (The Row Report).
+- **billionairesrow.nyc** — 301 redirect → billionairesrownyc.com (supporting asset).
+- **you@brnyc.com** — email domain.
+
+This repo is the **interim placeholder** on brnyc.com: a teaser that holds the
+vault domain (no-index, by design) and captures interest until the gated
+platform is built.
 
 ## What it is (per Charles, "websites" email, 6 Aug 2026)
 
@@ -40,12 +55,10 @@ capture into GHL:
 - **License number** — omitted here on purpose. `10351214445` is 11 digits (NY =
   10) and is unconfirmed; no listings are shown so no license display is required
   on a stub. Add once confirmed.
-- **Legal links** point at `billionairesrownyc.com/*`. Repoint if brnyc.com gets
-  its own legal pages.
-- **Domain wiring** — the authoritative map is the `BRNYC-Domain-Architecture-Map.pdf`
-  attachment on Charles's 6 Aug "websites" email (not yet read). His emails are
-  internally ambiguous on whether the platform lives at brnyc.com or
-  billionairesrownyc.com — settle from that PDF before pointing DNS.
+- **Legal links** point at `billionairesrownyc.com/*` — correct per the
+  architecture (legal pages live on the public front door).
+- **Forwarding** — brnyc.com currently 301s to billionairesrownyc.com. Remove
+  that and serve this placeholder (Charles, 30 Aug 2026).
 
 ## Footer source
 
