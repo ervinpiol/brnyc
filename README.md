@@ -75,6 +75,19 @@ Served **locally** on this placeholder (not redirected to billionairesrownyc.com
   the no-index vault domain; the canonical indexed copies live on
   billionairesrownyc.com).
 
+## System pages
+
+- **Footer** — the compliance footer ([`components/SiteFooter.tsx`](components/SiteFooter.tsx))
+  renders on **every** page via the root layout.
+- **404** — [`app/not-found.tsx`](app/not-found.tsx); **route error** —
+  [`app/error.tsx`](app/error.tsx); **root-layout error** —
+  [`app/global-error.tsx`](app/global-error.tsx). Ported from the platform's
+  `.failure` styling, retargeted to home + request-access (no listings/map here).
+- **Favicon** — the platform monogram (`public/images/monogram.svg`), set via
+  `metadata.icons` in [`app/layout.tsx`](app/layout.tsx), matching
+  billionairesrownyc.com. (The top-left logo on inner pages is a plain white
+  wordmark — no monogram box.)
+
 ## Wire the lead form (GHL)
 
 The page ships with a `mailto:` fallback so it is never dead. To embed the GHL

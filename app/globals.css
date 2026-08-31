@@ -78,7 +78,8 @@ a:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: rgba(248, 250, 252, 0.72);
+  /* White at rest, brass on hover. */
+  color: var(--obs-ivory);
   font-family: var(--font-sans);
   font-size: 0.57rem;
   font-weight: 600;
@@ -86,12 +87,6 @@ a:focus-visible,
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.brand-link img {
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
 }
 
 .brand-link span {
@@ -102,7 +97,7 @@ a:focus-visible,
 }
 
 .brand-link:hover {
-  color: var(--obs-ivory);
+  color: var(--obs-brass);
 }
 
 .disclosure {
@@ -177,9 +172,110 @@ a:focus-visible,
   .brand-link {
     font-size: 0.46rem;
   }
+}
 
-  .brand-link img {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
+/* ---------------------------------------------------------------------------
+   Layout shell + failure pages (404 / route error), ported from the platform.
+   --------------------------------------------------------------------------- */
+.site-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* The page's <main> grows so the footer sits at the bottom on short pages. */
+.site-shell > main {
+  flex: 1 0 auto;
+}
+
+.failure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 78vh;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 8vw, 6rem) var(--obs-gutter);
+  text-align: center;
+}
+
+.failure__eyebrow {
+  margin: 0 0 1.2rem;
+  color: var(--obs-brass);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.failure h1 {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--obs-ivory);
+}
+
+.failure h1 em {
+  font-style: italic;
+}
+
+.failure__copy {
+  margin: 0 auto 2.2rem;
+  max-width: 34rem;
+  color: rgba(248, 250, 252, 0.72);
+  line-height: 1.65;
+}
+
+.failure__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.failure__actions button,
+.failure__primary {
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--obs-line-brass);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--obs-brass);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms var(--obs-ease-out);
+}
+
+.failure__actions button:hover,
+.failure__primary:hover {
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.failure__actions a {
+  color: rgba(248, 250, 252, 0.66);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.failure__actions a:hover {
+  color: var(--obs-ivory);
+}
+
+.failure__digest {
+  margin: 2.4rem 0 0;
+  color: rgba(248, 250, 252, 0.4);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
