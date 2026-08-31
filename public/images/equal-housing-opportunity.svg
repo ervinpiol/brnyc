@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Equal Housing Opportunity" color="rgba(248, 250, 252, 0.62)">
+  <!--
+    Stand-in for the official HUD Equal Housing Opportunity mark.
+
+    The Client linked the official asset for download (26 July 2026). Replace
+    this file with it, keeping the filename, and every page picks it up. Take
+    HUD's white/reverse version: the notice sits on the graphite band, and the
+    certified mark must not be recoloured to suit a background.
+
+    Drawn rather than left absent so the notice is never missing its mark; the
+    shape follows the standard house-with-equal-sign device but is not the
+    certified artwork.
+
+    The colour is carried on the root rather than inherited. ComplianceNotice
+    renders this through <img src>, which loads it as a separate document —
+    currentColor there resolves against this file's own colour, not the page's,
+    so without the attribute the mark paints black on a near-black band.
+  -->
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M3 15 16 5l13 10" />
+    <path d="M6.5 13.2V27h19V13.2" />
+  </g>
+  <g fill="currentColor">
+    <rect x="11" y="17.2" width="10" height="2.1" rx="0.4" />
+    <rect x="11" y="21.2" width="10" height="2.1" rx="0.4" />
+  </g>
+</svg>

@@ -44,8 +44,18 @@ export default function SiteFooter() {
         ))}
       </nav>
 
-      <div className="mt-3">Equal Housing Opportunity</div>
-      <div>&copy; 2026 Charles Fritschler. All rights reserved.</div>
+      <div className="mt-3 flex items-center justify-center gap-2">
+        {/* Stand-in for the official HUD Equal Housing Opportunity mark — swap
+            for the official asset (keep the filename), same as the platform. */}
+        <img
+          src="/images/equal-housing-opportunity.svg"
+          alt=""
+          aria-hidden="true"
+          className="h-4 w-4"
+        />
+        Equal Housing Opportunity
+      </div>
+      <div className="mt-1">&copy; 2026 Charles Fritschler. All rights reserved.</div>
     </footer>
   );
 }

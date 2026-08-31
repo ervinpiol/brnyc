@@ -77,7 +77,12 @@ Served **locally** on this placeholder (not redirected to billionairesrownyc.com
 ## System pages
 
 - **Footer** — the compliance footer ([`components/SiteFooter.tsx`](components/SiteFooter.tsx))
-  renders on **every** page via the root layout.
+  renders on **every** page via the root layout. Deliberately lean: broker
+  identity + contact + legal links + Equal Housing Opportunity (seal) +
+  copyright. The platform's RLS/REBNY/IDX + listing-disclaimer block is **not**
+  copied — those attribute RLS listing data, and this placeholder shows no
+  listings. The EHO seal (`public/images/equal-housing-opportunity.svg`) is a
+  stand-in — swap for the official HUD mark, keeping the filename.
 - **404** — [`app/not-found.tsx`](app/not-found.tsx); **route error** —
   [`app/error.tsx`](app/error.tsx); **root-layout error** —
   [`app/global-error.tsx`](app/global-error.tsx). Ported from the platform's
