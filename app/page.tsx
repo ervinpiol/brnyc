@@ -11,7 +11,7 @@ export default function Home() {
   const ghlFormUrl = process.env.NEXT_PUBLIC_GHL_FORM_URL;
 
   return (
-    <main className="relative isolate flex flex-1 items-center justify-center overflow-hidden px-6 py-[12vh]">
+    <main className="relative isolate flex min-h-svh items-center justify-center overflow-hidden px-6 py-[12vh]">
       {/* 57th Street skyline behind the teaser — same asset the platform hero uses. */}
       <picture className="home-hero__bg" aria-hidden="true">
         <source media="(max-width: 720px)" srcSet="/images/hero-mobile.svg" />
