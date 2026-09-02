@@ -77,15 +77,18 @@ Served **locally** on this placeholder (not redirected to billionairesrownyc.com
 | `/terms` | `content/terms-and-conditions.json` |
 | `/standard-operating-procedures` | `content/standard-operating-procedures.json` |
 | `/accessibility` | `content/accessibility.json` |
-| `/fair-housing` | `content/fair-housing-notice.json` (NYS Housing & Anti-Discrimination Notice, Rev. 02/25) |
 
-- The five `content/*.json` files are copied **verbatim** from the
+- The four `content/*.json` files are copied **verbatim** from the
   billionairesrownyc platform repo (`content/`), rendered by
   [`components/DisclosureDocument.tsx`](components/DisclosureDocument.tsx). To
   update a policy, replace the JSON file (re-copy from the platform repo) — do
   not hand-edit legal copy.
-- `/fair-housing` renders the full **NYS Housing and Anti-Discrimination Notice**
-  (the State's standardized form, Rev. 02/25), same content the platform serves.
+- **NYS Fair Housing Notice** is not reproduced here. The footer links straight
+  to the State's canonical URL
+  [`dos.ny.gov/fair-housing-notice`](https://dos.ny.gov/fair-housing-notice),
+  which 301-redirects to the current revision PDF. The State renames that PDF
+  each revision, so the short URL always tracks the latest — we never maintain
+  the notice text.
 - All legal pages inherit the site-wide **no-index** (they are interim copies on
   the no-index vault domain; the canonical indexed copies live on
   billionairesrownyc.com).
