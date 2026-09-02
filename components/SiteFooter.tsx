@@ -1,9 +1,11 @@
 const INQUIRY_EMAIL = "inquiries@billionairesrownyc.com";
 
 // Legal pages served locally on this placeholder (copy from the billionairesrownyc
-// platform content/). Fair Housing links the State's own prescribed notice.
-const LEGAL_LINKS = [
-  { label: "NYS Fair Housing Notice", href: "/fair-housing" },
+// platform content/). Fair Housing links the State's own canonical notice URL
+// (dos.ny.gov/fair-housing-notice) so it always tracks the State's current
+// revision — we never reproduce or maintain that text ourselves.
+const LEGAL_LINKS: { label: string; href: string; external?: boolean }[] = [
+  { label: "NYS Fair Housing Notice", href: "https://dos.ny.gov/fair-housing-notice", external: true },
   { label: "NY Standard Operating Procedures", href: "/standard-operating-procedures" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms & Conditions", href: "/terms" },
@@ -37,7 +39,11 @@ export default function SiteFooter() {
         {LEGAL_LINKS.map((link, i) => (
           <span key={link.href}>
             {i > 0 && <span aria-hidden="true" className="text-line"> | </span>}
-            <a href={link.href} className="whitespace-nowrap text-copper hover:underline underline-offset-4">
+            <a
+              href={link.href}
+              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="whitespace-nowrap text-copper hover:underline underline-offset-4"
+            >
               {link.label}
             </a>
           </span>
